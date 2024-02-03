@@ -50,8 +50,7 @@ export default async (request: Request, context: Context) => {
     `
     return new Response(blank_html, {
       headers: {
-        ...CORS_HEADERS,
-        "content-type": "text/html"
+        ...CORS_HEADERS
       },
     });
   }
