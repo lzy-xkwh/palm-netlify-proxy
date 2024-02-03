@@ -56,14 +56,14 @@ export default async (request: Request, context: Context) => {
     });
   }
 
-  const url = new URL(pathname, "https://generativelanguage.googleapis.com");
+  const url = new URL(pathname, "https://discord.com");
   searchParams.delete("_path");
 
   searchParams.forEach((value, key) => {
     url.searchParams.append(key, value);
   });
 
-  const headers = pickHeaders(request.headers, ["content-type", "x-goog-api-client", "x-goog-api-key", "accept-encoding"]);
+  const headers = pickHeaders(request.headers);
 
   const response = await fetch(url, {
     body: request.body,
